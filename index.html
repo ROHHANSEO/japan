@@ -7,10 +7,12 @@
     <title>Document</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
-<body>
-    <div id="title"></div>
+<body data-page="1-">
+    <div id="title">교토 여행</div>
     <div>
-        <span id="menu_btn" data-active="off">메뉴</span>
+        <span id="menu_btn">메뉴</span>
+        <span id="menu_back_btn" data-active="off">돌아가기</span>
+        <a id = "all" href="https://goo.gl/maps/Xa9CsSo8KiLhtTeL7">전체지도보기</a>
     </div>
     <div id="main_nav">
         <ul class="day_list first_list">
@@ -21,62 +23,71 @@
             <li data-target="3day">3일차</li>
             <li data-target="4day">4일차</li>
             <li data-target="5day">5일차</li>
+            <li data-target="6day">6일차</li>
         </ul>
-        <ul id="room">
+        <ul id="room" class="sca">
             <li>
                 <ul class="day_list">
                     <li class="click_none">숙소</li>
-                    <li room-target="kyo1">교토 1차(12월 5일 ~ 12월 6일 1박)</li>
-                    <li room-target="kyo2">교토 2차(12월 6일 ~ 12월 8일 2박)</li>
-                    <li room-target="osaka3">오사카 3차(12월 8일 ~ 12월 9일 1박)</li>
+                    <li day-calendar="kyo1">교토 1차(비지니스 2박)</li>
+                    <li day-calendar="kyo2">교토 2차(료칸 1박)</li>
+                    <li day-calendar="osaka3">오사카 3차(비지니스 2박)</li>
                 </ul>
             </li>
         </ul>
-        <ul id="1day">
+        <ul id="1day" class="sca">
             <li>
                 <ul class="day_list">
                     <li class="click_none">1일차</li>
-                    <li day-calendar="1dayKiyomizu">기요미즈데라(청수사)</li>
                     <li day-calendar="1dayHushimi">후시미이나리신사</li>
                     <li day-calendar="1dayKamogawa">카모가와 테라스 술집</li>
-                    <li day-calendar="1dayGionmachi">기온거리</li>
                 </ul>
             </li>
         </ul>
-        <ul id="2day">
+        <ul id="2day" class="sca">
             <li>
                 <ul class="day_list">
                     <li class="click_none">2일차</li>
-                    <li day-calendar="2dayArashiyama">아라시야마 대나무숲</li>
-                    <li day-calendar="2dayDowathu">도월교 주변</li>
-                    <li day-calendar="2dayKimono">기모노숲</li>
+                    <li day-calendar="2dayKiyomizu">기요미즈데라(청수사)</li>
+                    <li day-calendar="2dayGionmachi">기온거리</li>
                 </ul>
             </li>
         </ul>
-        <ul id="3day">
+        <ul id="3day" class="sca">
             <li>
                 <ul class="day_list">
                     <li class="click_none">3일차</li>
-                    <li day-calendar="3dayTorotco">토롯코열차</li>
-                    <li day-calendar="3dayHozugawa">호즈가와쿠다리</li>
+                    <li day-calendar="3dayArashiyama">아라시야마 대나무숲</li>
+                    <li day-calendar="3dayDowathu">도월교 주변</li>
+                    <li day-calendar="3dayKimono">기모노숲</li>
                 </ul>
             </li>
         </ul>
-        <ul id="4day">
+        <ul id="4day" class="sca">
             <li>
                 <ul class="day_list">
                     <li class="click_none">4일차</li>
+                    <li day-calendar="3dayTorotco">토롯코열차</li>
+                    <li day-calendar="3dayHozugawa">호즈가와쿠다리</li>
                     <li day-calendar="4dayDoton">도톤보리</li>
-                    <li day-calendar="4dayOSJ">오사카 유니버셜 스튜디오 재팬</li>
                 </ul>
             </li>
         </ul>
-        <ul id="5day">
+        <ul id="5day" class="sca">
             <li>
                 <ul class="day_list">
                     <li class="click_none">5일차</li>
+                    <li day-calendar="5dayOSJ">오사카 유니버셜 스튜디오 재팬</li>
                     <li day-calendar="5dayDenDen">덴덴타운</li>
-                    <li day-calendar="5daySipal">복귀</li>
+                </ul>
+            </li>
+        </ul>
+        <ul id="6day" class="sca">
+            <li>
+                <ul class="day_list">
+                    <li class="click_none">6일차</li>
+                    <li day-calendar="6dayOsakaShima">오사카성</li>
+                    <li day-calendar="6daySipal">복귀</li>
                 </ul>
             </li>
         </ul>
@@ -92,13 +103,13 @@
         <div id="kyo2">
             <p class="calendarTitle">교토 아라시야마 온센 가덴쇼</p>
             <img src="./imege/room2.png" alt="">
-            <p>2박 일정으로 계획 가격대가 좀 있음 료칸경험을 하려면 이정되는 되야 하지않을까?</p>
+            <p>1박 일정으로 계획 가격대가 좀 있음</p>
             <a href="https://www.hotelscombined.co.kr/hotels/%EA%B5%90%ED%86%A0-%EC%95%84%EB%9D%BC%EC%8B%9C%EC%95%BC%EB%A7%88-%EC%98%A8%EC%84%BC-%EC%B9%B4%EB%8D%B4%EC%87%BC,%EA%B5%90%ED%86%A0-c20339-h681336-details/2022-12-05/2022-12-07/3adults?sid=NSGEqQKkAC#overview">숙소 상세보기</a>
         </div>
         <div id="osaka3">
             <p class="calendarTitle">미정</p>
         </div>
-        <div id="1dayKiyomizu">
+        <div id="2dayKiyomizu">
             <p class="calendarTitle">기요미즈데라(청수사)</p>
             <img src="./imege/giyomizu.png" alt="">
         </div>
@@ -110,40 +121,43 @@
             <p class="calendarTitle">카모가와 테라스 술집</p>
             <img src="./imege/kamogawa.png" alt="">
         </div>
-        <div id="1dayGionmachi">
+        <div id="2dayGionmachi">
             <p class="calendarTitle">기온거리</p>
             <img src="./imege/gion.png" alt="">
         </div>
-        <div id="2dayArashiyama">
+        <div id="3dayArashiyama">
             <p class="calendarTitle">아라시야마 대나무숲</p>
             <img src="./imege/arashiyama.png" alt="">
         </div>
-        <div id="2dayDowathu">
+        <div id="3dayDowathu">
             <p class="calendarTitle">도월교</p>
             <img src="./imege/dowathu.png" alt="">
         </div>
-        <div id="2dayKimono">
+        <div id="3dayKimono">
             <p class="calendarTitle">기모노숲</p>
             <img src="./imege/kimono.png" alt="">
         </div>
-        <div id="3dayTorotco">
+        <div id="4dayTorotco">
             <p class="calendarTitle">토롯코 열차</p>
             <img src="./imege/torotco.png" alt="">
         </div>
-        <div id="3dayHozugawa">
+        <div id="4dayHozugawa">
             <p class="calendarTitle">호즈가와쿠다리</p>
             <img src="./imege/hozugawa.png" alt="">
         </div>
         <div id="4dayDoton">
             <p class="calendarTitle">도톤보리</p>
         </div>
-        <div id="4dayOSJ">
+        <div id="5dayOSJ">
             <p class="calendarTitle">오사카 유니버셜 스튜디오 재팬</p>
         </div>
         <div id="5dayDenDen">
             <p class="calendarTitle">덴덴타운</p>
         </div>
-        <div id="5daySipal">
+        <div id="6dayOsakaShima">
+            <p class="calendarTitle">오사카성</p>
+        </div>
+        <div id="6daySipal">
             <p class="calendarTitle">ㅅㅂ</p>
         </div>
     </div>

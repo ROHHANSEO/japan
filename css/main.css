@@ -52,13 +52,26 @@ table {
 
 
 
-
+#title {
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    text-align: center;
+    margin-top: 5vh;
+    font-size: 24px;
+    z-index: 9999;
+    font-weight: 600;
+}
 
 
 #main_nav {
     width: 100vw;
     height: 100vh;
-    display: none;
+    position: fixed;
+    top:0;
+    left: 0;
+    background-color: #fff;
 }
 
 #main_nav > ul {
@@ -94,10 +107,12 @@ table {
     top: 3vh;
     right: 5vw;
     cursor: pointer;
+    z-index: 9999;
+    display: none;
 }
 
 #main_section {
-    /* display: none; */
+    margin-top: 15vh;
 }
 
 img {
@@ -109,4 +124,23 @@ img {
     font-weight: 600;
     text-align: center;
     margin: 5vh 0;
+}
+
+#main_section > div {
+    display: none;
+}
+
+#menu_back_btn {
+    position: fixed;
+    z-index: 9999;
+    top: 3vh;
+    right: 5vw;
+    display: none;
+}
+
+#all {
+    z-index: 9999;
+    position: absolute;
+    top: 15vh;
+    right: 10vw;
 }
