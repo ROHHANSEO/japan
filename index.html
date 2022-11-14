@@ -28,7 +28,8 @@
         <ul id="room" class="sca">
             <li>
                 <ul class="day_list">
-                    <li class="click_none">숙소</li>
+                    <li class="click_none">숙소, 항공권</li>
+                    <li day-calendar="air">항공권</li>
                     <li day-calendar="kyo1">교토 1차(비지니스 2박)</li>
                     <li day-calendar="kyo2">교토 2차(료칸 1박)</li>
                     <li day-calendar="osaka3">오사카 3차(비지니스 2박)</li>
@@ -40,6 +41,7 @@
                 <ul class="day_list">
                     <li class="click_none">1일차</li>
                     <li day-calendar="1dayHushimi">후시미이나리신사</li>
+                    <li day-calendar="1dayNishiki">니시키시장</li>
                     <li day-calendar="1dayKamogawa">카모가와 테라스 술집</li>
                 </ul>
             </li>
@@ -50,6 +52,7 @@
                     <li class="click_none">2일차</li>
                     <li day-calendar="2dayKiyomizu">기요미즈데라(청수사)</li>
                     <li day-calendar="2dayBlue">블루보틀 카페</li>
+                    <li day-calendar="2dayNizo">니조성</li>
                     <li day-calendar="2dayGionmachi">기온거리</li>
                 </ul>
             </li>
@@ -60,6 +63,7 @@
                     <li class="click_none">3일차</li>
                     <li day-calendar="3dayArashiyama">아라시야마 대나무숲</li>
                     <li day-calendar="3dayDowathu">도월교 주변</li>
+                    <li day-calendar="3dayMong">몽키파크</li>
                     <li day-calendar="3dayKimono">기모노숲</li>
                 </ul>
             </li>
@@ -71,6 +75,7 @@
                     <li day-calendar="4dayTorotco">토롯코열차</li>
                     <li day-calendar="4dayHozugawa">호즈가와쿠다리</li>
                     <li day-calendar="4dayKFC">오사카 KFC 레스토랑</li>
+                    <li day-calendar="4daySkyBilding">우메다 하늘정원</li>
                     <li day-calendar="4dayDoton">도톤보리</li>
                 </ul>
             </li>
@@ -80,8 +85,7 @@
                 <ul class="day_list">
                     <li class="click_none">5일차</li>
                     <li day-calendar="5dayOSJ">오사카 유니버셜 스튜디오 재팬</li>
-                    <li day-calendar="5dayDenDen">덴덴타운</li>
-                    <li day-calendar="5daySkyBilding">우메다 하늘정원</li>
+                    <li day-calendar="5dayNanowanoyu">나니와 노유 온천</li>
                 </ul>
             </li>
         </ul>
@@ -89,7 +93,7 @@
             <li>
                 <ul class="day_list">
                     <li class="click_none">6일차</li>
-                    <li day-calendar = "6dayNanowanoyu">나니와 노유 온천</li>
+                    <li day-calendar="6dayDenDen">덴덴타운</li>
                     <li day-calendar="6dayOsakaShima">오사카성</li>
                     <li day-calendar="6daySipal">복귀</li>
                 </ul>
@@ -97,16 +101,33 @@
         </ul>
     </div>
     <div id="main_section">
+        <div id="air">
+            <p class="calendarTitle">항공권</p>
+            <img src="./imege/air.png" alt="">
+        </div>
         <div id="kyo1">
-            <p class="calendarTitle">호텔 킨테츠 교토 스테이션</p>
-            <p>위치상 베스트위치 간사이 공항에서 교토바로 넘어올경우 도착하는곳이기도 하고 좋은 위치임은 틀림없음</p>
+            <p class="calendarTitle">뉴 미야코 호텔</p>
+            <img src="./imege/kyotoeki.png" alt="">
+            <img src="./imege/kyotoekichi.png" alt="">
         </div>
         <div id="kyo2">
             <p class="calendarTitle">교토 아라시야마 온센 가덴쇼</p>
-            <p>1박 일정으로 계획 가격대가 좀 있음</p>
+            <img src="./imege/kyotoArashi.png" alt="">
+            <img src="./imege/kyotoArashichi.png" alt="">
         </div>
         <div id="osaka3">
-            <p class="calendarTitle">미정</p>
+            <p class="calendarTitle">난바 오리엔탈 호텔</p>
+            <img src="./imege/osakaRoom.png" alt="">
+            <img src="./imege/osakaRoomchi.png" alt="">
+        </div>
+        <div id="1dayNishiki">
+            <p class="calendarTitle">니시키시장</p>
+            <img src="https://t1.daumcdn.net/cfile/tistory/99C13F4F5CDABF4C14" alt="">
+            <img src="https://t1.daumcdn.net/cfile/tistory/99F66D475CDAC34507" alt="">
+            <img src="https://t1.daumcdn.net/cfile/tistory/992E0C4F5CDAC34723" alt="">
+            <img src="./imege/nishiki.png" alt="">
+            <a href="https://limsee.com/458">설명 사이트</a>
+            <button class="siteBtn" type="button">설명사이트</button>
         </div>
         <div id="2dayKiyomizu">
             <p class="calendarTitle">기요미즈데라(청수사)</p>
@@ -131,6 +152,15 @@
             <img src="https://d28dpoj42hxr8c.cloudfront.net/files/rcms_conv_webp/files/user/201607221952_9_1469184720.webp?v=1535381059" alt="">
             <img src="https://media.triple.guide/triple-cms/c_limit,f_auto,h_1080,w_1080/8fe137ab-6d01-4159-b8d2-3aab9d26037a.jpeg" alt="">
             <a href="https://www.pref.kyoto.jp/kamogawa/">설명 사이트</a>
+            <button class="siteBtn" type="button">설명사이트</button>
+        </div>
+        <div id="2dayNizo">
+            <p class="calendarTitle">니조성</p>
+            <img src="https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000144/img/basic/a2000144_main.jpg?20210129090107" alt="">
+            <img src="https://t1.daumcdn.net/cfile/tistory/99E455495BB9ED3B29" alt="">
+            <img src="https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000145/img/basic/a2000145_main.jpg?20210201090158&q=80&rw=750&rh=536" alt="">
+            <img src="./imege/nizo.png" alt="">
+            <a href="https://www.japan.travel/ko/spot/1165/">설명사이트</a>
             <button class="siteBtn" type="button">설명사이트</button>
         </div>
         <div id="2dayBlue">
@@ -162,6 +192,12 @@
             <img src="https://rimage.gnst.jp/livejapan.com/public/article/detail/a/20/00/a2000367/img/ko/a2000367_parts_5e66f173d805d.jpg?20201222143645&q=80" alt="">
             <img src="https://www.jal.co.jp/kr/ko/guide-to-japan/destinations/articles/kyoto/5-ways-to-explore-bamboo-forest/_jcr_content/root/responsivegrid/sectioncontainer/image_196689611.coreimg.jpeg/1636979906908.jpeg" alt="">
             <a href="http://www.atraveltalk.com/bbs/board.php?bo_table=attraction&wr_id=198">설명사이트</a>
+            <button class="siteBtn" type="button">설명사이트</button>
+        </div>
+        <div id="3dayMong">
+            <p class="calendarTitle">몽키파크</p>
+            
+            <a href="">설명사이트</a>
             <button class="siteBtn" type="button">설명사이트</button>
         </div>
         <div id="3dayKimono">
@@ -212,7 +248,7 @@
             <a href="https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EB%B2%84%EC%84%A4_%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4_%EC%9E%AC%ED%8C%AC">설명사이트</a>
             <button class="siteBtn" type="button">설명사이트</button>
         </div>
-        <div id="5dayDenDen">
+        <div id="6dayDenDen">
             <p class="calendarTitle">덴덴타운</p>
             <img src="https://mblogthumb-phinf.pstatic.net/MjAxNzA0MTBfODcg/MDAxNDkxODM0Mzc4Mjg0.HY8e2bUNefzShrhqi0XEcJRiVtlVeFUcfvIZ84b04fkg._dccRvJn1KHYmSahy4QODKE_h2Bo9jMkw1Az9UKqx3wg.JPEG.risteard85/DSC04522.JPG?type=w800" alt="">
             <img src="https://hobbylink.kr/data/editor/2104/thumb-c27349b037fab525595fc8acc2c625cd_1618810461_6582_600x450.jpg" alt="">
@@ -220,7 +256,7 @@
             <a href="https://www.japan.travel/ko/spot/84/">설명사이트</a>
             <button class="siteBtn" type="button">설명사이트</button>
         </div>
-        <div id="5daySkyBilding">
+        <div id="4daySkyBilding">
             <p class="calendarTitle">우메다 하늘정원</p>
             <img src="https://t1.daumcdn.net/cfile/tistory/2275C24C552635D91A" alt="">
             <img src="https://cdn.crowdpic.net/detail-thumb/thumb_d_723F910E69FE0AFC8E193E73FF7F66EE.jpg" alt="">
@@ -235,7 +271,7 @@
             <a href="https://www.japan.travel/ko/spot/84/">설명사이트</a>
             <button class="siteBtn" type="button">설명사이트</button>
         </div>
-        <div id="6dayNanowanoyu">
+        <div id="5dayNanowanoyu">
             <p class="calendarTitle">나니와노유 온천</p>
             <img src="https://cdn.imweb.me/upload/S201612185855798c0088d/80d8ef292e8ad.jpg" alt="">
             <img src="https://cdn.imweb.me/upload/S201612185855798c0088d/cf3314988cb88.jpg" alt="">
