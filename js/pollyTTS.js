@@ -7,6 +7,7 @@ AWS.config.credentials = new AWS.Credentials("AKIAUVTA3QORXLLBODF4", "eRrIuXS7Wg
         
 var polly = new AWS.Polly();
 var isLoaded = false;
+var a;
 
 function doSynthesize(text) {
     var pollyParams = {
@@ -55,10 +56,12 @@ function doSynthesizeBySSML(ssml) {
             var blob = new Blob([arrayBuffer]);
             var url = URL.createObjectURL(blob);
         
-            isLoaded = true;
+            // isLoaded = true;
             audioElement = new Audio([url]);
-            audioElement.play();
-            audioTime(audioElement);
+            // audioElement.play();
+            // audioTime(audioElement);
+
+            a = audioElement;
         }
     });
 }
@@ -99,32 +102,7 @@ var tags = {
 
 //클릭시 상태값구분
 function TTSTrigger(e,page){
-	
-	var status = $(e).attr("data-status");
-	
-	switch(status){
-	case 'first' : 
-		if(page == 'LIST') listTTS();
-		else if(page == 'DETAIL') {
-			detailTTS();
-			$("#TTSBtn").addClass("on");
-		}
-		$("#TTSBtn").attr("data-status","stop");
-		break;
-	case 'play' : 
-		play();
-		if(page == 'DETAIL') $("#TTSBtn").addClass("on");
-		audioTime(audioElement);
-		$("#TTSBtn").attr("data-status","stop");
-		break;
-	case 'stop' : 
-		stop();
-		if(page == 'DETAIL') $("#TTSBtn").removeClass("on");
-		//clearInterval(interval);
-		$("#TTSBtn").attr("data-status","play");
-		break;
-	}
-	
+    detailTTS();
 }
 
 //주요뉴스리스트 
@@ -154,7 +132,7 @@ function listTTS(){
 
 //상세기사 
 //첫 TTS 작동시 데이터 수집후 출력 요청
-function detailTTS(){
+$(function(){
 	
 	var title = contentReplace($(".siteViewTitle").val());
 	var content = contentReplace($(".siteViewContent").val());
@@ -166,7 +144,7 @@ function detailTTS(){
 //	$("#textEntry").val(html);
 //	
 //	start();
-}
+})
 
 //TTS 출력 완료후 재실행을 할수있게 처리를 하기위한 함수
 function audioTime(audioElement){
@@ -216,3 +194,7 @@ function contentReplace(text){
 	
 	return returnText;
 }
+
+$('#btn').click(function(){
+    a.play();
+})
