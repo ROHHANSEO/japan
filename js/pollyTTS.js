@@ -62,8 +62,8 @@ function doSynthesizeBySSML(ssml) {
             // audioTime(audioElement);
 
             a = audioElement;
+            console.log(a);
             $("#audioBox").html(a);
-            $("#audioBox audio").attr('muted','muted');
         }
     });
 }
@@ -198,6 +198,7 @@ function contentReplace(text){
 }
 
 $('#btn').click(function(){
-    $("#audioBox audio").play();
-    $("#audioBox audio").attr('muted',false);
+    var b = new Audio($('audio').attr('src'));
+
+    b.play();
 })
