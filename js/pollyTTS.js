@@ -57,11 +57,13 @@ function doSynthesizeBySSML(ssml) {
             var url = URL.createObjectURL(blob);
         
             // isLoaded = true;
-            //audioElement = new Audio([url]);
+            audioElement = new Audio([url]);
             // audioElement.play();
             // audioTime(audioElement);
 
+
             $("#ttsAudio").attr("src",url);
+            $("#ttsAudio").after(audioElement);
         }
     });
 }
