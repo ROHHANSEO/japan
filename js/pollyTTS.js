@@ -57,15 +57,11 @@ function doSynthesizeBySSML(ssml) {
             var url = URL.createObjectURL(blob);
         
             // isLoaded = true;
-            audioElement = new Audio([url]);
+            //audioElement = new Audio([url]);
             // audioElement.play();
             // audioTime(audioElement);
 
-            a = audioElement;
-            console.log(a);
-            $("#audioBox").html(a);
-            $("#audioBox audio").attr("muted","muted");
-            $("#audioBox audio").attr("id","ttsId");
+            $("#ttsAudio").attr("src",url);
         }
     });
 }
@@ -199,6 +195,6 @@ function contentReplace(text){
 	return returnText;
 }
 
-var button = $("#btn");
-
-button.addEventListner('click', () => { a.play(); })
+$("#btn").on('click',function(){
+    document.getElementById("ttsAudio").play();
+})
