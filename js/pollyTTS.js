@@ -65,23 +65,24 @@ function doSynthesizeBySSML(ssml) {
             console.log(a);
             $("#audioBox").html(a);
             $("#audioBox audio").attr("muted","muted");
+            $("#audioBox audio").attr("id","ttsId");
         }
     });
 }
 
-function play() {
-    if (!isLoaded) {
-        return;
-    }
-    audioElement.play();
-}
+// function play() {
+//     if (!isLoaded) {
+//         return;
+//     }
+//     audioElement.play();
+// }
 
-function stop() {
-    if (!isLoaded) {
-        return;
-    }
-    audioElement.pause();
-}
+// function stop() {
+//     if (!isLoaded) {
+//         return;
+//     }
+//     audioElement.pause();
+// }
 
 
 
@@ -198,8 +199,6 @@ function contentReplace(text){
 	return returnText;
 }
 
-$('#btn').click(function(){
-    var b = new Audio($('audio').attr('src'));
+var button = $("#btn");
 
-    b.play();
-})
+button.addEventListner('click', () => { a.play(); })
