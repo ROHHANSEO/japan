@@ -64,6 +64,7 @@ function doSynthesizeBySSML(ssml) {
             a = audioElement;
             console.log(a);
             $("#audioBox").html(a);
+            $("#audioBox audio").attr("muted","muted");
         }
     });
 }
