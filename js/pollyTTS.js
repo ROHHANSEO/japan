@@ -64,6 +64,8 @@ function doSynthesizeBySSML(ssml) {
 
             $("#ttsAudio").attr("src",url);
             $("#ttsAudio").after(audioElement);
+
+            $("audio").attr("controls","controls");
         }
     });
 }
