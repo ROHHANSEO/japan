@@ -53,19 +53,25 @@ function doSynthesizeBySSML(ssml) {
         else {
             var uInt8Array = new Uint8Array(data.AudioStream);
             var arrayBuffer = uInt8Array.buffer;
-            var blob = new Blob([arrayBuffer]);
+            var blob = new Blob([arrayBuffer], {type : 'audio/mpeg'});
             var url = URL.createObjectURL(blob);
-        
+
+            blob.type = 'audio/mpeg';
+            console.log(blob)
+            console.log(url)
             // isLoaded = true;
-            audioElement = new Audio([url]);
+            audioElement = new Audio();
             // audioElement.play();
             // audioTime(audioElement);
 
 
-            $("#ttsAudio").attr("src",url);
-            $("#ttsAudio").after(audioElement);
-
-            $("audio").attr("controls","controls");
+            const reader = new FileReader();
+            reader.onload = () => {
+                const base64data = reader.result;
+                console.log(base64data)
+                $("#ttsAudio").attr('src',base64data);
+            }
+            reader.readAsDataURL(blob);
         }
     });
 }
