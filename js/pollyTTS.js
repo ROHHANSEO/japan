@@ -120,7 +120,7 @@ function TTSTrigger(e,page){
 	case 'stop' : 
 		stop();
 		if(page == 'DETAIL') $("#TTSBtn").removeClass("on");
-		clearInterval(interval);
+		//clearInterval(interval);
 		$("#TTSBtn").attr("data-status","play");
 		break;
 	}
