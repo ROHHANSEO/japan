@@ -17,7 +17,7 @@ function doSynthesize(text) {
         TextType: "text", 
         VoiceId: "Seoyeon"
     };
-         
+
     polly.synthesizeSpeech(pollyParams, function(err, data) {
         if (err) {
             console.log(err, err.stack); // an error occurred
@@ -44,7 +44,7 @@ function doSynthesizeBySSML(ssml) {
         TextType: "ssml", 
         VoiceId: "Seoyeon"
     };
-         
+        
     polly.synthesizeSpeech(pollyParams, function(err, data) {
         if (err) {
             console.log(err, err.stack); // an error occurred
@@ -54,41 +54,36 @@ function doSynthesizeBySSML(ssml) {
             var uInt8Array = new Uint8Array(data.AudioStream);
             var arrayBuffer = uInt8Array.buffer;
             var blob = new Blob([arrayBuffer], {type : 'audio/mpeg'});
-            var url = URL.createObjectURL(blob);
-
-            blob.type = 'audio/mpeg';
-            console.log(blob)
-            console.log(url)
-            // isLoaded = true;
             audioElement = new Audio();
-            // audioElement.play();
-            // audioTime(audioElement);
-
 
             const reader = new FileReader();
             reader.onload = () => {
                 const base64data = reader.result;
-                console.log(base64data)
-                $("#ttsAudio").attr('src',base64data);
+                audioElement.src = base64data;
             }
             reader.readAsDataURL(blob);
+
+            isLoaded = true;
+            audioElement.play();
+            audioTime(audioElement);
+
         }
     });
 }
 
-// function play() {
-//     if (!isLoaded) {
-//         return;
-//     }
-//     audioElement.play();
-// }
+function play() {
+    if (!isLoaded) {
+        return;
+    }
+    audioElement.play();
+}
 
-// function stop() {
-//     if (!isLoaded) {
-//         return;
-//     }
-//     audioElement.pause();
-// }
+function stop() {
+    if (!isLoaded) {
+        return;
+    }
+    audioElement.pause();
+}
 
 
 
@@ -112,7 +107,30 @@ var tags = {
 
 //클릭시 상태값구분
 function TTSTrigger(e,page){
-    detailTTS();
+    var status = $(e).attr("data-status");
+	
+	switch(status){
+	case 'first' : 
+		if(page == 'LIST') listTTS();
+		else if(page == 'DETAIL') {
+			detailTTS();
+			$("#TTSBtn").addClass("on");
+		}
+		$("#TTSBtn").attr("data-status","stop");
+		break;
+	case 'play' : 
+		play();
+		if(page == 'DETAIL') $("#TTSBtn").addClass("on");
+		audioTime(audioElement);
+		$("#TTSBtn").attr("data-status","stop");
+		break;
+	case 'stop' : 
+		stop();
+		if(page == 'DETAIL') $("#TTSBtn").removeClass("on");
+		clearInterval(interval);
+		$("#TTSBtn").attr("data-status","play");
+		break;
+	}
 }
 
 //주요뉴스리스트 
@@ -133,16 +151,11 @@ function listTTS(){
 	}
 	
 	doSynthesizeBySSML(html);
-	
-//	$("#textEntry").val(html);
-//	
-//	start();
-	
 }
 
 //상세기사 
 //첫 TTS 작동시 데이터 수집후 출력 요청
-$(function(){
+function detailTTS(){
 	
 	var title = contentReplace($(".siteViewTitle").val());
 	var content = contentReplace($(".siteViewContent").val());
@@ -150,11 +163,7 @@ $(function(){
 	var html = tags.speakStart + title + tags.articleDelay + content + tags.speakEnd;
 	
 	doSynthesizeBySSML(html);
-
-//	$("#textEntry").val(html);
-//	
-//	start();
-})
+}
 
 //TTS 출력 완료후 재실행을 할수있게 처리를 하기위한 함수
 function audioTime(audioElement){
@@ -172,7 +181,6 @@ function audioTime(audioElement){
             $("#TTSBtn").removeClass("on");
         }
     }, 100)
-
 }
 
 function contentReplace(text){
@@ -204,7 +212,3 @@ function contentReplace(text){
 	
 	return returnText;
 }
-
-$("#btn").on('click',function(){
-    document.getElementById("ttsAudio").play();
-})
